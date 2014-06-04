@@ -1,0 +1,31 @@
+package com.senac.projetoissues.test;
+
+import static org.mockito.Mockito.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TesteCriaUsuario {
+
+	private String usuario;
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testeVerificaLoginUsuarioCadastrado() {
+		willPasswordMatch(false);
+		
+	}
+
+	private void willPasswordMatch(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
