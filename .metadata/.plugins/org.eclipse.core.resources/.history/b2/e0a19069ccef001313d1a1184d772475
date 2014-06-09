@@ -36,10 +36,9 @@ public class TesteUsuario {
 	
 	public void testeCriaUsuarioComNomeEUserName() {
 		Usuario usuario = mock (Usuario.class);
-		
 		assertEquals(null, usuario.getNome());
 		
-		assertEquals(username, usuario.getUsername());
+		assertEquals(username, usuario.getUserName());
 	}
 
 }

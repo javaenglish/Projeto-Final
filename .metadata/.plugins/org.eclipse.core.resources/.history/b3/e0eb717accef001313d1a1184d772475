@@ -1,0 +1,18 @@
+package com.senac.projetoissues;
+
+public class Usuario {
+
+	private String nome;
+	private String username;
+	
+	public Object getNome() {
+		
+		return nome;
+	}
+
+	public String getUserName() {
+		
+		return null;
+	}
+
+}

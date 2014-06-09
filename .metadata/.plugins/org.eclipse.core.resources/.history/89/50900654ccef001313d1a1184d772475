@@ -1,0 +1,10 @@
+package com.senac.projetoissues;
+
+public class Usuario {
+
+	public Object getNome() {
+		
+		return null;
+	}
+
+}
