@@ -30,6 +30,5 @@ public class TesteUsuario {
 	public void testeCriaUsuarioComNomeUsernameESenha() {
 		assertEquals(null, usuario.getNome());
 		assertEquals(username, usuario.getUsername());
-		assertEquals(senha, usuario.getSenha());
 	}
 }
