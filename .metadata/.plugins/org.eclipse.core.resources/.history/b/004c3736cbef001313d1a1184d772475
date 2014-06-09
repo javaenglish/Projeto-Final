@@ -24,11 +24,5 @@ public class TesteUsuario {
 	public void testeCriaUsuario() {
 		Usuario usuario = mock (Usuario.class);
 	}
-	
-	@Test
-	public void testeCriaUsuarioComNome() {
-		Usuario usuario = mock (Usuario.class);
-		assertEquals("nome", usuario.getNome());
-	}
 
 }
