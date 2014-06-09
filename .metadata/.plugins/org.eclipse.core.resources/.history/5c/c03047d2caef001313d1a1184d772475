@@ -6,10 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.senac.projetoissues.Usuario;
-
-import static org.mockito.Mockito.*;
-
 public class TesteUsuario {
 
 	@Before
@@ -21,8 +17,8 @@ public class TesteUsuario {
 	}
 
 	@Test
-	public void testeCriaUsuario() {
-		Usuario usuario = mock (Usuario.class);
+	public void test() {
+		fail("Not yet implemented");
 	}
 
 }
