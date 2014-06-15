@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.senac.projetoissues.Usuario;
+
 public class TesteLogin {
 
 	@Before
@@ -18,7 +20,8 @@ public class TesteLogin {
 
 	@Test
 	public void testaSenhaUsuario() {
-		assertEquals("1234", usuario.getSenha());
+		Usuario usuario = new Usuario();
+		assertEquals(null, usuario.getSenha());
 		
 	}
 
