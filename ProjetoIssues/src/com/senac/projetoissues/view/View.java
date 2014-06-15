@@ -2,6 +2,10 @@ package com.senac.projetoissues.view;
 
 import java.util.Scanner;
 
+/**
+ * @author javaEnglish
+ *
+ */
 public class View {
 	
 	Scanner entrada = new Scanner (System.in);
