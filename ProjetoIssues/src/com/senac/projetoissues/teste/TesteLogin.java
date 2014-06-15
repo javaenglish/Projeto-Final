@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.mockito.Mockito.*;
 
 import com.senac.projetoissues.model.Usuario;
 
@@ -20,7 +21,7 @@ public class TesteLogin {
 
 	@Test
 	public void testaSenhaUsuario() {
-		Usuario usuario = new Usuario();
+		Usuario usuario = mock(Usuario.class);
 		assertEquals(null, usuario.getSenha());
 		
 	}
