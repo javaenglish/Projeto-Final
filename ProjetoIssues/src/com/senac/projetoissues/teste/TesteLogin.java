@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.senac.projetoissues.Usuario;
+import com.senac.projetoissues.model.Usuario;
 
 public class TesteLogin {
 
