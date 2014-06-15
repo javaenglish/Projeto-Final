@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TesteUsuario" project="ProjetoIssues" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="com.senac.projetoissues.teste.TesteUsuario" time="0.437">
-    <testcase name="testeCriaUsuarioComNome" classname="com.senac.projetoissues.teste.TesteUsuario" time="0.435"/>
-    <testcase name="testeCriaUsuario" classname="com.senac.projetoissues.teste.TesteUsuario" time="0.002"/>
-  </testsuite>
-</testrun>
