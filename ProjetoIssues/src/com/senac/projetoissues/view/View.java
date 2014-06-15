@@ -2,7 +2,7 @@ package com.senac.projetoissues.view;
 
 import java.util.Scanner;
 
-public class IssuesView {
+public class View {
 	
 	Scanner entrada = new Scanner (System.in);
 
@@ -11,10 +11,16 @@ public class IssuesView {
 		return entrada.nextLine();
 	}
 	
+	public String adicionaUserName () {
+		System.out.println("Escolha um username para seu Login");
+		return entrada.next();
+	}
+	
 	public int adicionaSenha () {
 		System.out.println("Escolha uma senha numerica de 4 digitos para seu Login");
 		return entrada.nextInt();
 	}
+	
 	public void usuarioAdicionado(){
 		System.out.println("Usuario adicionado com sucesso");
 	}
