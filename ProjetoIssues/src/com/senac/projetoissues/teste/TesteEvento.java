@@ -9,24 +9,12 @@ import static org.mockito.Mockito.*;
 
 public class TesteEvento {
 	
-	private Evento evento;
-	private Evento datacriacao;
-
 	@Before
 	public void setUp() throws Exception {
 	}
 
 	@After
 	public void tearDown() throws Exception {
-	}
-
-	@Test
-	public void testDataCriacao() {
-		evento = mock(Evento.class);
-		assertEquals(dataCriacao,evento.getDataCriacao);
-		
-		
-		
 	}
 
 }
