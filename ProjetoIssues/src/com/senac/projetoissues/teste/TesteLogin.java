@@ -33,7 +33,11 @@ public class TesteLogin {
 	}
 	
 	private void verificaSenha (boolean senha) {
-			when(conta.verificaSenha(anyString())).thenReturn(senha);
+		when(conta.verificaSenha(anyString())).thenReturn(senha);
+	}
+	
+	private void verificaUserName(boolean userName) {
+		when(conta.verificaUserName(anyString())).thenReturn(userName);	
 	}
 
 	@After
@@ -43,10 +47,9 @@ public class TesteLogin {
 	@Test
 	public void testaLogarSeSenhaEUserNameEstaoCorretos() {
 		
-		verificaSenha (true);
-		
+		verificaSenha(true);
+		verificaUserName(true);
 		login.Login("Rafa", "Senha Correta");
-		
 		verify(conta, times(1)).setLogado(true);
 		
 	}

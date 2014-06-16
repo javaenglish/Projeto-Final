@@ -6,4 +6,6 @@ public interface Conta {
 
 	public void setLogado(boolean status);
 
+	public boolean verificaUserName(String anyString);
+
 }
