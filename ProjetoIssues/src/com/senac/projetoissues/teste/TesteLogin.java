@@ -7,20 +7,22 @@ import static org.mockito.Mockito.when;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.stubbing.OngoingStubbing;
 
 import com.senac.projetoissues.Conta;
 import com.senac.projetoissues.ContaBancoDados;
 import com.senac.projetoissues.Login;
+import com.senac.projetoissues.Usuario;
 
 public class TesteLogin {
 
+	private Usuario usuario;
 	private Login login;
 	private Conta conta;
 	private ContaBancoDados contaBancoDados;
 	
 	@Before
 	public void setUp() throws Exception {
+		usuario = mock(Usuario.class);
 		conta = mock(Conta.class);
 		contaBancoDados = mock(ContaBancoDados.class);
 		when(contaBancoDados.busca(anyString())).thenReturn(conta);
@@ -28,7 +30,7 @@ public class TesteLogin {
 		login = new Login(contaBancoDados);
 	}
 	
-		private void verificaSenha (boolean senha) {
+	private void verificaSenha (boolean senha) {
 			when(conta.verificaSenha(anyString())).thenReturn(senha);
 	}
 
@@ -38,6 +40,15 @@ public class TesteLogin {
 
 	@Test
 	public void testaLogarSeSenhaEUserNameEstaoCorretos() {
+		verificaSenha (true);
+		
+		login.Login("Rafa", "Senha Correta");
+		
+		verificaUserName(true);
+		
+	}
+
+	private void verificaUserName(boolean b) {
 		
 	}
 	

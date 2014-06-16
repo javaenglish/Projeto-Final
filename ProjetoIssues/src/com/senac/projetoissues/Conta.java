@@ -2,6 +2,8 @@ package com.senac.projetoissues;
 
 public interface Conta {
 
-	public void verificaSenha(String anyString);
+	public boolean verificaSenha(String anyString);
+
+	public void setLogado(boolean status);
 
 }
