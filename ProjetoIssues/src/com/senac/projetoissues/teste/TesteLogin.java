@@ -1,18 +1,39 @@
 package com.senac.projetoissues.teste;
 
-import static org.junit.Assert.*;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import static org.mockito.Mockito.*;
 
-import com.senac.projetoissues.model.Usuario;
+import com.senac.projetoissues.Conta;
+import com.senac.projetoissues.ContaBancoDados;
+import com.senac.projetoissues.Login;
+import com.senac.projetoissues.Usuario;
 
 public class TesteLogin {
 
+	private Usuario usuario;
+	private Login login;
+	private Conta conta;
+	private ContaBancoDados contaBancoDados;
+	
 	@Before
 	public void setUp() throws Exception {
+		usuario = mock(Usuario.class);
+		conta = mock(Conta.class);
+		contaBancoDados = mock(ContaBancoDados.class);
+		when(contaBancoDados.busca(anyString())).thenReturn(conta);
+		
+		login = new Login(contaBancoDados);
+	}
+	
+	private void verificaSenha (boolean senha) {
+			when(conta.verificaSenha(anyString())).thenReturn(senha);
 	}
 
 	@After
@@ -20,10 +41,14 @@ public class TesteLogin {
 	}
 
 	@Test
-	public void testaSenhaUsuario() {
-		Usuario usuario = mock(Usuario.class);
-		assertEquals(null, usuario.getSenha());
+	public void testaLogarSeSenhaEUserNameEstaoCorretos() {
+		
+		verificaSenha (true);
+		
+		login.Login("Rafa", "Senha Correta");
+		
+		verify(conta, times(1)).setLogado(true);
 		
 	}
-	
+
 }
