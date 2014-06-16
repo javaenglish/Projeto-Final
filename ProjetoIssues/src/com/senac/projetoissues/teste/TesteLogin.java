@@ -1,10 +1,6 @@
 package com.senac.projetoissues.teste;
 
-import static org.mockito.Matchers.anyString;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 import org.junit.After;
 import org.junit.Before;
@@ -13,6 +9,7 @@ import org.junit.Test;
 import com.senac.projetoissues.Conta;
 import com.senac.projetoissues.ContaBancoDados;
 import com.senac.projetoissues.Login;
+import com.senac.projetoissues.SenhaIncorretaException;
 import com.senac.projetoissues.Usuario;
 
 public class TesteLogin {
@@ -47,11 +44,18 @@ public class TesteLogin {
 	@Test
 	public void testaLogarSeSenhaEUserNameEstaoCorretos() {
 		
-		verificaSenha(true);
 		verificaUserName(true);
-		login.Login("Rafa", "Senha Correta");
+		verificaSenha(true);
+		login.login("Rafa", "Senha Correta");
 		verify(conta, times(1)).setLogado(true);
 		
+	}
+	
+	@Test(expected=SenhaIncorretaException.class)
+	public void testeFalhaLoginSeSenhaIncorreta () throws SenhaIncorretaException {
+		verificaSenha(false);
+		
+		verify(conta, never()).setLogado(false);
 	}
 
 }
