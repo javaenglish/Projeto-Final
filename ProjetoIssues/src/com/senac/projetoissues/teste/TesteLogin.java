@@ -51,8 +51,4 @@ public class TesteLogin {
 		
 	}
 
-	private void verificaUserName(boolean b) {
-		
-	}
-	
 }
