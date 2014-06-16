@@ -1,4 +1,4 @@
-package com.senac.projetoissues.model;
+ package com.senac.projetoissues.model;
 
 public class Evento {
 	
