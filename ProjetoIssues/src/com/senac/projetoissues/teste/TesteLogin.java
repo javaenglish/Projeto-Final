@@ -2,6 +2,8 @@ package com.senac.projetoissues.teste;
 
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import org.junit.After;
@@ -40,11 +42,12 @@ public class TesteLogin {
 
 	@Test
 	public void testaLogarSeSenhaEUserNameEstaoCorretos() {
+		
 		verificaSenha (true);
 		
 		login.Login("Rafa", "Senha Correta");
 		
-		verificaUserName(true);
+		verify(conta, times(1)).setLogado(true);
 		
 	}
 
