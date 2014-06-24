@@ -53,9 +53,18 @@ public class TesteLogin {
 	
 	@Test(expected=SenhaIncorretaException.class)
 	public void testeFalhaLoginSeSenhaIncorreta () throws SenhaIncorretaException {
+		
 		verificaSenha(false);
 		
 		verify(conta, never()).setLogado(false);
 	}
-
+	
+	@Test(expected=ClienteNaoEncontradoException.class)
+	public void testeFalhaLoginQuandoClienteNaoEncontrado () throws ClienteNaoEncontradoException {
+		verificaUserName(false);
+		verificaSenha(false);
+		
+		verify(conta, never()).setLogado(false);
+	}
+	
 }

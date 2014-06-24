@@ -17,8 +17,6 @@ public class TesteEvento{
 	Evento evento;
 	Usuario criador;
 	
-		
-	
 	@Before
 	public void setUp() throws Exception {
 		this.evento = mock(Evento.class);
@@ -26,11 +24,8 @@ public class TesteEvento{
 		
 	}
 
-	
-
 	@After
 	public void tearDown() throws Exception {
-		
 		
 	}
 
