@@ -10,6 +10,7 @@ import com.senac.projetoissues.Conta;
 import com.senac.projetoissues.ContaBancoDados;
 import com.senac.projetoissues.Login;
 import com.senac.projetoissues.SenhaIncorretaException;
+import com.senac.projetoissues.UsernameNaoEncontradoException;
 import com.senac.projetoissues.Usuario;
 
 public class TesteLogin {
@@ -54,13 +55,15 @@ public class TesteLogin {
 	@Test(expected=SenhaIncorretaException.class)
 	public void testeFalhaLoginSeSenhaIncorreta () throws SenhaIncorretaException {
 		
+		verificaUserName(true);
+		
 		verificaSenha(false);
 		
 		verify(conta, never()).setLogado(false);
 	}
 	
-	@Test(expected=ClienteNaoEncontradoException.class)
-	public void testeFalhaLoginQuandoClienteNaoEncontrado () throws ClienteNaoEncontradoException {
+	@Test(expected=UsernameNaoEncontradoException.class)
+	public void testeFalhaLoginQuandoUsernameNaoEncontrado () throws UsernameNaoEncontradoException {
 		verificaUserName(false);
 		verificaSenha(false);
 		
