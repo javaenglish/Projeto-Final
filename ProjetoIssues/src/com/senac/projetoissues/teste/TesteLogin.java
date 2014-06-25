@@ -6,12 +6,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.senac.projetoissues.Conta;
 import com.senac.projetoissues.ContaBancoDados;
 import com.senac.projetoissues.Login;
-import com.senac.projetoissues.SenhaIncorretaException;
-import com.senac.projetoissues.UsernameNaoEncontradoException;
-import com.senac.projetoissues.Usuario;
+import com.senac.projetoissues.exceptions.SenhaIncorretaException;
+import com.senac.projetoissues.exceptions.UsernameNaoEncontradoException;
+import com.senac.projetoissues.model.Conta;
+import com.senac.projetoissues.model.Usuario;
 
 public class TesteLogin {
 
@@ -55,10 +55,9 @@ public class TesteLogin {
 	@Test(expected=SenhaIncorretaException.class)
 	public void testeFalhaLoginSeSenhaIncorreta () throws SenhaIncorretaException {
 		
-		verificaUserName(true);
-		
+		verificaUserName(true);		
 		verificaSenha(false);
-		
+		login.login("Rafa", "Senha Incorreta");
 		verify(conta, never()).setLogado(false);
 	}
 	
@@ -67,6 +66,7 @@ public class TesteLogin {
 		verificaUserName(false);
 		verificaSenha(false);
 		
+		login.login("Username Errado", "Senha Incorreta");
 		verify(conta, never()).setLogado(false);
 	}
 	

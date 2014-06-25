@@ -1,4 +1,4 @@
-package com.senac.projetoissues;
+package com.senac.projetoissues.model;
 
 /**
  * @author javaEnglish
@@ -9,6 +9,8 @@ public class Usuario {
 	private String nome;
 	private String username;
 	private String senha;
+	
+	//adicionando um construtor a classe
 	
 	public Usuario(String nome, String username, String senha) {
 		this.nome = nome;

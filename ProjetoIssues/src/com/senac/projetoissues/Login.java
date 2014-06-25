@@ -1,5 +1,7 @@
 package com.senac.projetoissues;
 
+import com.senac.projetoissues.model.Conta;
+
 
 public class Login {
 

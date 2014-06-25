@@ -6,8 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.senac.projetoissues.Evento;
-import com.senac.projetoissues.Usuario;
+import com.senac.projetoissues.model.Evento;
+import com.senac.projetoissues.model.Usuario;
 
 import static org.mockito.Mockito.*;
 

@@ -1,4 +1,4 @@
-package com.senac.projetoissues;
+package com.senac.projetoissues.exceptions;
 
 public class UsernameNaoEncontradoException extends Exception {
 
