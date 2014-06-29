@@ -21,8 +21,8 @@ public class TesteUsuario {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void testeCadastraUsuarios() {
+		
 	}
 
 }

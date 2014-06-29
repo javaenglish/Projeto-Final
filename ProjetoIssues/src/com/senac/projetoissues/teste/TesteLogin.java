@@ -70,4 +70,11 @@ public class TesteLogin {
 		verify(conta, never()).setLogado(false);
 	}
 	
+	@Test
+	public void testeNaoPodeLogarSeJaEstaLogado () {
+		verificaSenha(true);
+		when(conta.isLogado().thenReturn(true));
+		login.login("Rafa", "Senha Correta");
+	}
+	
 }
