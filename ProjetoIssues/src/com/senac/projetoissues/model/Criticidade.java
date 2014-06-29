@@ -17,15 +17,9 @@ public enum Criticidade {
 	public String getDescricao() {
 		return descricao;
 	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+	
 	public int getNivel() {
 		return nivel;
 	}
-	public void setNivel(int nivel) {
-		this.nivel = nivel;
-	}
-
-	
+		
 }
