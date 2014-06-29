@@ -31,7 +31,7 @@ public class TesteLogin {
 	}
 	
 	private void verificaSenha (boolean senha) {
-		when(conta.verificaSenha(anyString())).thenReturn(senha);
+		when(conta.senhaCompativel(anyString())).thenReturn(senha);
 	}
 	
 	private void verificaUserName(boolean userName) {
@@ -55,10 +55,12 @@ public class TesteLogin {
 	@Test(expected=SenhaIncorretaException.class)
 	public void testeFalhaLoginSeSenhaIncorreta () throws SenhaIncorretaException {
 		
-		verificaUserName(true);		
+		
 		verificaSenha(false);
+		when(conta.senhaCompativel("SenhaCorreta")).thenReturn(true);
+		
+		verify(conta, never()).setLogado(true);
 		login.login("Rafa", "Senha Incorreta");
-		verify(conta, never()).setLogado(false);
 	}
 	
 	@Test(expected=UsernameNaoEncontradoException.class)
@@ -73,7 +75,7 @@ public class TesteLogin {
 	@Test
 	public void testeNaoPodeLogarSeJaEstaLogado () {
 		verificaSenha(true);
-		when(conta.isLogado().thenReturn(true));
+		when(conta.isLogado()).thenReturn(true);
 		login.login("Rafa", "Senha Correta");
 	}
 	

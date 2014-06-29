@@ -10,7 +10,7 @@ public class Login {
 
 	public void login(String userName, String senha) {
 		Conta conta = contaBancoDados.busca(userName);
-		if (conta.verificaSenha(senha))
+		if (conta.senhaCompativel(senha))
 			conta.setLogado(true);
 	}
 
