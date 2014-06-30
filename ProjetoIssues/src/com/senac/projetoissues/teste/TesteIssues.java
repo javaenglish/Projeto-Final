@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import static org.mockito.Mockito.*;
 
 import com.senac.projetoissues.model.Issue;
 
@@ -13,7 +12,7 @@ public class TesteIssues {
 
 	@Before
 	public void setUp() throws Exception {
-		Issue issue = mock(Issue.class);
+		Issue issue = new Issue("", "", 0, null, null, null, null, null, 0);
 	}
 
 	@After
@@ -22,7 +21,7 @@ public class TesteIssues {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+	
 	}
 
 }
